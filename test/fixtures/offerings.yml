@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  semester: 1
+  location: MyString
+  time: 1
+  instructor: MyString
+  limit: 1
+  crn: 1
+
+two:
+  semester: 1
+  location: MyString
+  time: 1
+  instructor: MyString
+  limit: 1
+  crn: 1

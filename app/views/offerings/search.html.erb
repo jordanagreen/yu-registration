@@ -1,0 +1,40 @@
+<h1>Search Offerings</h1>
+
+<%= form_tag("/offerings", method: "get") do %>
+    <table>
+    <tr>
+        <td>
+            <%= label_tag(:department, "Department:") %>
+        </td>
+        <td>
+            <%= text_field_tag(:department) %>
+        </td>
+    </tr>
+    <tr>
+        <td>
+          <%= label_tag(:instructor, "Instructor:") %>
+        </td>
+        <td>
+          <%= text_field_tag(:instructor) %>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <%= label_tag(:course_number, "Course Number:") %>
+        </td>
+        <td>
+            <%= text_field_tag(:course_number) %>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <%= label_tag(:semester, "Semester:") %>
+        </td>
+         <td>
+             <%= select_tag(:semester, options_for_select(Offering.semesters),
+                 :include_blank => "Any") %>
+         </td>
+    </tr>
+  </table>
+  <%= submit_tag("Search") %>
+<% end %>

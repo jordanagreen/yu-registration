@@ -18,7 +18,7 @@
     <% @offerings.each do |offering| %>
       <tr>
         <td><%= offering.course.title %></td>
-        <td><%= offering.semester.capitalize %></td>
+        <td><%= offering.semester %></td>
         <td><%= offering.location %></td>
         <td><%= offering.section %></td>
         <td><%= offering.crn %></td>
@@ -33,3 +33,4 @@
 <br>
 
 <%= link_to 'New Offering', new_offering_path %>
+<%= link_to 'Back', :back %>

@@ -11,6 +11,9 @@ class OfferingsController < ApplicationController
       format.xml {render :xml => @offerings.to_xml}
     end
   end
+  
+  def search
+  end
 
   # GET /offerings/1
   # GET /offerings/1.json

@@ -4,8 +4,16 @@ class CoursesController < ApplicationController
   # GET /courses
   # GET /courses.json
   def index
-    @courses = Course.all
+    # if (params.has_key?(:search)) then
+      # @courses = Course.search_offerings(params[:search])
+    # else
+      @courses = Course.all
+    # end
   end
+  
+  # def search
+    # @courses = Course.search_offerings(params[:search])
+  # end
 
   # GET /courses/1
   # GET /courses/1.json

@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Course:</strong>
+  <%= @offering.course.title %>
+</p>
+<p>
+  <strong>Semester:</strong>
+  <%= @offering.semester.capitalize %>
+</p>
+<p>
+  <strong>Location:</strong>
+  <%= @offering.location %>
+</p>
+<p>
+  <strong>Section:</strong>
+  <%= @offering.section %>
+</p>
+<p>
+  <strong>CRN:</strong>
+  <%= @offering.crn %>
+</p>
+
+<%= link_to 'Edit', edit_offering_path(@offering) %> |
+<%= link_to 'Back', :back %>

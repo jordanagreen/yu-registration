@@ -1,4 +1,5 @@
 <p id="notice"><%= notice %></p>
+<p id="alert"><%= alert %></p>
 
 <p>
   <strong>Course:</strong>
@@ -28,6 +29,8 @@
   <strong>Spots Available:</strong>
   <%= @offering.spots_available %>
 </p>
+
+<%= button_to 'Enroll', action: 'enroll' %>
 
 <%= link_to 'Edit', edit_offering_path(@offering) %> |
 <%= link_to 'Back', :back %>

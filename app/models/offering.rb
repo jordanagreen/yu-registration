@@ -6,7 +6,9 @@ class Offering < ActiveRecord::Base
     def enroll
         if (self.spots_available > 0) then 
             self.decrement! :spots_available, 1
+            return true
         end
+        return false
     end
     
     def self.search(params)

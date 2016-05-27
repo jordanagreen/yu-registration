@@ -1,5 +1,5 @@
 class OfferingsController < ApplicationController
-  before_action :set_offering, only: [:show, :edit, :update, :destroy]
+  before_action :set_offering, only: [:show, :edit, :update, :destroy, :enroll]
 
   # GET /offerings
   # GET /offerings.json
@@ -23,6 +23,15 @@ class OfferingsController < ApplicationController
       format.json {render :json => @offering.to_json}
       format.xml {render :xml => @offering.to_xml}
     end
+  end
+  
+  def enroll
+    if (@offering.enroll) then
+      flash[:notice] = "You have been enrolled in #{@offering.course.title}."
+    else
+      flash[:alert] = "#{@offering.course.title} is already full."
+    end
+    redirect_to action: 'search'
   end
 
   # GET /offerings/new

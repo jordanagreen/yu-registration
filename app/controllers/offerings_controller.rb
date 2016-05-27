@@ -5,16 +5,21 @@ class OfferingsController < ApplicationController
   # GET /offerings.json
   def index
     @offerings = Offering.search(params)
-  end
-  
-  def search
-    @offerings = Offering.search(params)
-    render 'index'
+    respond_to do |format|
+      format.html
+      format.json {render :json => @offerings.to_json}
+      format.xml {render :xml => @offerings.to_xml}
+    end
   end
 
   # GET /offerings/1
   # GET /offerings/1.json
   def show
+    respond_to do |format|
+      format.html
+      format.json {render :json => @offering.to_json}
+      format.xml {render :xml => @offering.to_xml}
+    end
   end
 
   # GET /offerings/new

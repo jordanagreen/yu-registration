@@ -4,20 +4,22 @@ class CoursesController < ApplicationController
   # GET /courses
   # GET /courses.json
   def index
-    # if (params.has_key?(:search)) then
-      # @courses = Course.search_offerings(params[:search])
-    # else
-      @courses = Course.all
-    # end
+    @courses = Course.all
+    respond_to do |format|
+      format.html
+      format.json {render :json => @courses.to_json}
+      format.xml {render :xml => @courses.to_xml}
+    end
   end
-  
-  # def search
-    # @courses = Course.search_offerings(params[:search])
-  # end
 
   # GET /courses/1
   # GET /courses/1.json
   def show
+    respond_to do |format|
+      format.html
+      format.json {render :json => @course.to_json}
+      format.xml {render :xml => @course.to_xml}
+    end
   end
 
   # GET /courses/new

@@ -16,7 +16,7 @@
     <% @courses.each do |course| %>
       <tr>
         <td><%= course.department %></td>
-        <td><%= course.number %></td>
+        <td><%= course.course_number %></td>
         <td><%= course.title %></td>
         <td><%= link_to 'Show', course %></td>
         <td><%= link_to 'Edit', edit_course_path(course) %></td>

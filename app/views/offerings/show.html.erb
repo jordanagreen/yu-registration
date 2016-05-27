@@ -5,6 +5,10 @@
   <%= @offering.course.title %>
 </p>
 <p>
+  <strong>Professor:</strong>
+  <%= @offering.professor_last_name %>
+</p>
+<p>
   <strong>Semester:</strong>
   <%= @offering.semester %>
 </p>
@@ -19,6 +23,10 @@
 <p>
   <strong>CRN:</strong>
   <%= @offering.crn %>
+</p>
+<p>
+  <strong>Spots Available:</strong>
+  <%= @offering.spots_available %>
 </p>
 
 <%= link_to 'Edit', edit_offering_path(@offering) %> |

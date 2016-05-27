@@ -16,12 +16,15 @@ class Offering < ActiveRecord::Base
         department = params[:department] || ''
         instructor = params[:instructor] || ''
         course_number = params[:course_number] || ''
-        semester = params[:semester] || '_'
-        if (semester.strip == '') then
-            semester = '_'
+        semester = params[:semester] || ''
+        if semester == ''
+            joins(:course).where("courses.department ILIKE (?) AND courses.course_number ILIKE (?)
+                AND professor_last_name ILIKE (?)", 
+                "%#{department}%", "%#{course_number}%", "%#{instructor}%")
+        else
+            joins(:course).where("courses.department ILIKE (?) AND courses.course_number ILIKE (?)
+                AND professor_last_name ILIKE (?) AND semester = (?)", 
+                "%#{department}%", "%#{course_number}%", "%#{instructor}%", semester.to_i)
         end
-        joins(:course).where("courses.department LIKE (?) AND courses.course_number LIKE (?)
-            AND professor_last_name LIKE (?) AND semester LIKE ?", 
-            "%#{department}%", "%#{course_number}%", "%#{instructor}%", semester)
     end
 end

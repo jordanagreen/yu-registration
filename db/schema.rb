@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20160526201111) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "courses", force: :cascade do |t|
     t.string   "department"
     t.string   "course_number"
@@ -33,6 +36,7 @@ ActiveRecord::Schema.define(version: 20160526201111) do
     t.integer  "course_id"
   end
 
-  add_index "offerings", ["course_id"], name: "index_offerings_on_course_id"
+  add_index "offerings", ["course_id"], name: "index_offerings_on_course_id", using: :btree
 
+  add_foreign_key "offerings", "courses"
 end

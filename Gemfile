@@ -41,10 +41,15 @@ group :development, :test do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'rspec-rails'
-  gem 'cucumber'
-  gem 'capybara'
+  
+  gem 'capybara-rails'
 end
 
+group :development do
+  # Access an IRB console on exception pages or by using <%= console %> in views
+  gem 'web-console', '~> 2.0', group: :development
+end
 
-# Access an IRB console on exception pages or by using <%= console %> in views
-gem 'web-console', '~> 2.0', group: :development
+group :test do
+  gem 'cucumber-rails', :require => false
+end

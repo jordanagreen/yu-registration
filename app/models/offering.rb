@@ -1,6 +1,8 @@
 class Offering < ActiveRecord::Base
     enum semester: [:Fall, :Spring, :Summer]
     belongs_to :course, inverse_of: :offerings
+    validates :semester, :location, :section, :professor_last_name, 
+        :spots_available, :course, presence: true
     validates :crn, uniqueness: true
     validates :spots_available, :numericality => { :greater_than_or_equal_to => 0 }
     

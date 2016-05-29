@@ -31,7 +31,7 @@ class OfferingsController < ApplicationController
     else
       flash[:alert] = "#{@offering.course.title} is already full."
     end
-    redirect_to action: 'search'
+    redirect_to action: 'index'
   end
 
   # GET /offerings/new

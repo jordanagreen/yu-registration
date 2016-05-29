@@ -20,11 +20,11 @@ class Offering < ActiveRecord::Base
         if semester == ''
             joins(:course).where("courses.department ILIKE (?) AND courses.course_number ILIKE (?)
                 AND professor_last_name ILIKE (?)", 
-                "%#{department}%", "%#{course_number}%", "%#{instructor}%")
+                "%#{department}%", "%#{course_number}%", "%#{instructor}%").order(:crn)
         else
             joins(:course).where("courses.department ILIKE (?) AND courses.course_number ILIKE (?)
                 AND professor_last_name ILIKE (?) AND semester = (?)", 
-                "%#{department}%", "%#{course_number}%", "%#{instructor}%", semester.to_i)
+                "%#{department}%", "%#{course_number}%", "%#{instructor}%", semester.to_i).order(:crn)
         end
     end
 end

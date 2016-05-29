@@ -10,7 +10,8 @@
       <th>Location</th>
       <th>Section</th>
       <th>CRN</th>
-      <th colspan="3"></th>
+      <th>Open</th>
+      <th colspan="4"></th>
     </tr>
   </thead>
 
@@ -22,6 +23,8 @@
         <td><%= offering.location %></td>
         <td><%= offering.section %></td>
         <td><%= offering.crn %></td>
+        <td><%= offering.spots_available %></td>
+        <td><%= button_to 'Enroll', enroll_offering_path(offering) %></td>
         <td><%= link_to 'Show', offering_path(offering) %></td>
         <td><%= link_to 'Edit', edit_offering_path(offering) %></td>
         <td><%= link_to 'Destroy', offering_path(offering), method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -31,6 +34,6 @@
 </table>
 
 <br>
-
+<%= link_to 'Search', search_offerings_path %>
 <%= link_to 'New Offering', new_offering_path %>
 <%= link_to 'Back', :back %>

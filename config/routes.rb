@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
-  resources :offerings
+  resources :offerings do
+    collection do
+      get 'search'
+    end
+    member do
+      get 'enroll'
+    end
+  end
   resources :courses 
   # resources :courses do
     # resources :offerings
@@ -12,7 +19,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'offerings#search'
+  root 'offerings#index'
   
   
   

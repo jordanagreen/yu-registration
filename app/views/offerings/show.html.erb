@@ -30,7 +30,7 @@
   <%= @offering.spots_available %>
 </p>
 
-<%= button_to 'Enroll', action: 'enroll' %>
+<%= button_to 'Enroll', enroll_offering_path %>
 
 <%= link_to 'Edit', edit_offering_path(@offering) %> |
 <%= link_to 'Back', :back %>

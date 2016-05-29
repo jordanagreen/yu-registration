@@ -2,6 +2,7 @@ class Offering < ActiveRecord::Base
     enum semester: [:Fall, :Spring, :Summer]
     belongs_to :course, inverse_of: :offerings
     validates :crn, uniqueness: true
+    validates :spots_available, :numericality => { :greater_than_or_equal_to => 0 }
     
     def enroll
         if (self.spots_available > 0) then 

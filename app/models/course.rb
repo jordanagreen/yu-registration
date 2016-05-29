@@ -1,5 +1,6 @@
 class Course < ActiveRecord::Base
     has_many :offerings, inverse_of: :course
+    validates_associated :offerings
     
      def self.search_offerings(search)
         # search by department name, instructor, course number, and semester

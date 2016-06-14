@@ -1,28 +1,5 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+A Rails application I wrote for my Industrial Software Development course.
+The basic structure is a registration app where users can register for courses online. Each course has multiple offerings, and these offerings can be searched for by various criteria.
+The user interface is very basic and "enrolling" in a course only decrements the number of openings available - in a full app, this would include checks to make sure you can only enroll in a course once, no schedule conflicts, credits, etc.
